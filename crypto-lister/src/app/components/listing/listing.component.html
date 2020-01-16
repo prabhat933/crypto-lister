@@ -4,14 +4,14 @@
 
 <table class="table table-bordered">
     <tr>
-        <th>List</th>
+        <th></th>
         <th>Cryptocurrency Name</th>
         <th><a href="">Price in $</a></th>
         <th><a href="">Market Cap in $</a></th>
         
     </tr>
     <tr *ngFor="let crypto of cryptos">
-        <th>{{crypto.list_id}}</th>
+        <th><input type="radio" name="selected"></th>
         <th>{{crypto.currency_name}}</th>
         <th>{{crypto.price}}</th>
         <th>{{crypto.market_cap}}</th>
@@ -21,3 +21,5 @@
 <p>
 <a href="">PREVIOUS</a> &nbsp; &nbsp; <a href="">NEXT</a>
 </p>
+<button type="button" class="btn btn-primary" >Mark as favourite</button>&nbsp; &nbsp; &nbsp;
+<button type="button" class="btn btn-primary">Compare</button>
