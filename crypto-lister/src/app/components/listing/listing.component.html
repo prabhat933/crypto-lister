@@ -1,6 +1,6 @@
-<h1>Crypto Lister</h1>
+
         
-<h2>List</h2>
+
 
 <table class="table table-bordered">
     <tr>
@@ -11,15 +11,18 @@
         
     </tr>
     <tr *ngFor="let crypto of cryptos">
-        <th><input type="radio" name="selected"></th>
+        <th><input type="checkbox" name="selected"></th>
         <th>{{crypto.currency_name}}</th>
         <th>{{crypto.price}}</th>
         <th>{{crypto.market_cap}}</th>
         </tr>
        
 </table>
-<p>
-<a href="">PREVIOUS</a> &nbsp; &nbsp; <a href="">NEXT</a>
-</p>
+<div class="float-left">
+<a href="">PREVIOUS</a> &nbsp; &nbsp; &nbsp;
+<a href="">Next</a>
+</div>
+<div class="float-right">
 <button type="button" class="btn btn-primary" >Mark as favourite</button>&nbsp; &nbsp; &nbsp;
 <button type="button" class="btn btn-primary">Compare</button>
+</div>
