@@ -21,7 +21,7 @@ import { CryptoServiceService } from './crypto-service.service';
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       {path:'app-charting',component:ChartingComponent},
-
+      {path: 'app-listing', component:ListingComponent},
     ]),
     AppRoutingModule
   ],
