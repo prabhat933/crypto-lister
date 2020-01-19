@@ -1,22 +1,31 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {RouterModule,Routes} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListingComponent } from './components/listing/listing.component';
 import { HeadingComponent } from './components/heading/heading.component';
+import { ChartingComponent } from './components/charting/charting.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { CryptoServiceService } from './crypto-service.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListingComponent,
-    HeadingComponent
+    HeadingComponent,
+    ChartingComponent
   ],
   imports: [
     BrowserModule,
+    MDBBootstrapModule.forRoot(),
+    RouterModule.forRoot([
+      {path:'app-charting',component:ChartingComponent},
+
+    ]),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CryptoServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
