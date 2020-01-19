@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule,Routes} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListingComponent } from './components/listing/listing.component';
@@ -21,7 +21,8 @@ import { CryptoServiceService } from './crypto-service.service';
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       {path:'app-charting',component:ChartingComponent},
-      {path: 'app-listing', component:ListingComponent},
+      {path: '', component:ListingComponent},
+      {path:'',component:ListingComponent}
     ]),
     AppRoutingModule
   ],
