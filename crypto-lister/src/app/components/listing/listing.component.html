@@ -2,15 +2,49 @@
     <tr>
         <th></th>
         <th>Cryptocurrency Name</th>
-        <th><a href="">Price in $</a></th>
-        <th><a href="">Market Cap in $</a></th>
-        
+        <th><a href="">crypto currency symbol</a></th>
+        <th><a href="">crypto currency name</a></th>
+        <th>IMAGE</th>
+        <th>CURRENT PRICE</th>
+        <th>MARKET CAP</th>
+        <th>MARKET CAP RANK</th>
+        <th>TOTAL VOLUME</th>
+        <th>HIGH</th>
+        <th>LOW</th>
+        <th>Price Change</th>
+        <th>Price change percentage</th>
+        <th>Market cap change</th>
+        <th>Circulating Supply</th>
+        <th>Total Supply</th>
+        <th>ath</th>
+        <th>ath_change_percentage</th>
+        <th>ath_date</th>
+        <th>roi</th>
+        <th>last updated</th>
     </tr>
     <tr *ngFor="let crypto of cryptos">
         <th><input type="checkbox" name="selected"></th>
-        <th>{{crypto.currency_name}}</th>
-        <th>{{crypto.price}}</th>
+        <th>{{crypto.id}}</th>
+        <th>{{crypto.symbol}}</th>
+        <th>{{crypto.name}}</th>
+        <th>{{crypto.image}}</th>
+        <th>{{crypto.current_price}}</th>
         <th>{{crypto.market_cap}}</th>
+        <th>{{crypto.market_cap_rank}}</th>
+        <th>{{crypto.total_volume}}</th>
+        <th>{{crypto.high_24h}}</th>
+        <th>{{crypto.low_24h}}</th>
+        <th>{{crypto.price_change_24h}}</th>
+        <th>{{crypto.price_change_percentage_24h}}</th>
+        <th>{{crypto.market_cap_change_24h}}</th>
+        <th>{{crypto.market_cap_change_percentage_24h}}</th>
+        <th>{{crypto.circulating_supply}}</th>
+        <th>{{crypto.total_supply}}</th>
+        <th>{{crypto.ath}}</th>
+        <th>{{crypto.ath_change_percentage}}</th>
+        <th>{{crypto.ath_date}}</th>
+        <th>{{crypto.roi}}</th>
+        <th>{{crypto.last_updated}}</th>
         </tr>
        
 </table>

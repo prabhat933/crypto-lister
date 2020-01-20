@@ -8,6 +8,7 @@ import { HeadingComponent } from './components/heading/heading.component';
 import { ChartingComponent } from './components/charting/charting.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CryptoServiceService } from './crypto-service.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CryptoServiceService } from './crypto-service.service';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       {path:'app-charting',component:ChartingComponent},
