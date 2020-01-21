@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DataService {
-  private _url:string = "https://www.coingecko.com/api/documentations/v3#/coins/get_coins_markets";
+  private _url:string = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=3&page=1&sparkline=false  ";
   constructor(private http:HttpClient) { }
   
   getData() {
