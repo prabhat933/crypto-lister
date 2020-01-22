@@ -4,14 +4,14 @@
         <td>Cryptocurrency Name</td>
         <td>Image</td>
         <td>Current Price</td>
-        <td>Market Cap</td>
+        <td><a href="#">Market Cap</a></td>
     </tr>
     <tr *ngFor="let crypto of cryptos">
         <td><input type="checkbox" name="selected"></td>
         <td>{{crypto.name}}</td>
         <td><img [src]="crypto.image" width= "32"></td>
         <td>{{crypto.current_price}}</td>
-        <td><a {{crypto.market_cap}}></a></td>
+        <td>{{crypto.market_cap}}</td>
         </tr>
        </table>
 <div class="float-left">
