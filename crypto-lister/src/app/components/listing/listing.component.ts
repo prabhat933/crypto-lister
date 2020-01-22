@@ -17,14 +17,15 @@ export class ListingComponent implements OnInit {
     
     fetchNextPage() {
       this.pageNumber++ ;
-      {
-        this.dataservice.getData(this.perPage,this.pageNumber,this.orderBy).subscribe(data =>(
-        this.cryptos = data))
-      }
+      this.dataservice.getData(this.perPage,this.pageNumber,this.orderBy).subscribe(data =>(
+      this.cryptos = data))
+      
     }
 
     fetchPreviousPage()  {
-      ;
+      this.pageNumber--;
+      this.dataservice.getData(this.perPage,this.pageNumber,this.orderBy).subscribe(data =>(
+        this.cryptos = data))
     }
       
     ngOnInit(
