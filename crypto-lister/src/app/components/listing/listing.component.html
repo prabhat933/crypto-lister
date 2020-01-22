@@ -1,10 +1,10 @@
 <table class="table table-bordered">
     <tr>
         <th></th>
-        <td>Cryptocurrency Name</td>
-        <td>Image</td>
-        <td>Current Price</td>
-        <td><a href="#">Market Cap</a></td>
+        <th>Cryptocurrency Name</th>
+        <th>Image</th>
+        <th>Current Price</th>
+        <th><a href="#">Market Cap</a></th>
     </tr>
     <tr *ngFor="let crypto of cryptos">
         <td><input type="checkbox" name="selected"></td>
@@ -16,7 +16,7 @@
        </table>
 <div class="float-left">
 <a [routerLink]="['']">Previous</a> &nbsp; &nbsp; &nbsp;
-<a [routerLink]="['app-charting']">Next</a>
+<a (click) = "fetchNextPage()">Next</a>
 </div>
 
 <div class="float-right">

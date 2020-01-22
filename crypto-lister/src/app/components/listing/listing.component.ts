@@ -11,19 +11,22 @@ export class ListingComponent implements OnInit {
     public cryptos 
     public pageNumber =1;
     public perPage = 10;
-    public orderBy = "market_cap_desc" ;
+    public orderBy = "market_cap_desc";
     
     constructor(private dataservice:DataService) { }
     
     fetchNextPage() {
-      console.log("Hello World");
+      this.pageNumber++ ;
+      {
+        this.dataservice.getData(this.perPage,this.pageNumber,this.orderBy).subscribe(data =>(
+        this.cryptos = data))
+      }
     }
 
     fetchPreviousPage()  {
-      console.log("Hello World");
+      ;
     }
-    
-
+      
     ngOnInit(
   )  {
     this.dataservice.getData(this.perPage,this.pageNumber,this.orderBy).subscribe(data =>(
@@ -31,4 +34,4 @@ export class ListingComponent implements OnInit {
   }
   
   
-}
+  }
