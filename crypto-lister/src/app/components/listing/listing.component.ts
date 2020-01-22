@@ -13,7 +13,7 @@ export class ListingComponent implements OnInit {
    
   ngOnInit(
   )  {
-    this.dataservice.getData().subscribe(data =>(
+    this.dataservice.getData(10,1).subscribe(data =>(
       this.cryptos = data))
   }
 
