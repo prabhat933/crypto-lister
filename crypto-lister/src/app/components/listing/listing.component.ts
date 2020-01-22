@@ -26,7 +26,7 @@ export class ListingComponent implements OnInit {
 
     ngOnInit(
   )  {
-    this.dataservice.getData(500,1).subscribe(data =>(
+    this.dataservice.getData(5000,1).subscribe(data =>(
     this.cryptos = data))
   }
   

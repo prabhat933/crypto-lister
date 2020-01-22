@@ -1,22 +1,21 @@
 <table class="table table-bordered">
     <tr>
         <th></th>
-        <th>Cryptocurrency Name</th>
-        <th>IMAGE</th>
-        <th>CURRENT PRICE</th>
-        <th>MARKET CAP</th>
+        <td>Cryptocurrency Name</td>
+        <td>Image</td>
+        <td>Current Price</td>
+        <td>Market Cap</td>
     </tr>
     <tr *ngFor="let crypto of cryptos">
         <td><input type="checkbox" name="selected"></td>
         <td>{{crypto.name}}</td>
         <td><img [src]="crypto.image" width= "32"></td>
         <td>{{crypto.current_price}}</td>
-        <td>{{crypto.market_cap}}</td>
+        <td><a {{crypto.market_cap}}></a></td>
         </tr>
-       
-</table>
+       </table>
 <div class="float-left">
-<a [routerLink]="['']">PREVIOUS</a> &nbsp; &nbsp; &nbsp;
+<a [routerLink]="['']">Previous</a> &nbsp; &nbsp; &nbsp;
 <a [routerLink]="['app-charting']">Next</a>
 </div>
 
