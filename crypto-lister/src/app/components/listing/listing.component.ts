@@ -9,9 +9,9 @@ import { DataService } from 'src/app/service/data.service';
 export class ListingComponent implements OnInit {
      
     public cryptos 
-    public pageNumber
-    public perPage
-    public orderBy
+    public pageNumber =1;
+    public perPage = 10;
+    public orderBy = "market_cap_desc" ;
     
     constructor(private dataservice:DataService) { }
     
@@ -26,7 +26,7 @@ export class ListingComponent implements OnInit {
 
     ngOnInit(
   )  {
-    this.dataservice.getData(5000,1).subscribe(data =>(
+    this.dataservice.getData(this.perPage,this.pageNumber,this.orderBy).subscribe(data =>(
     this.cryptos = data))
   }
   
