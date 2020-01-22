@@ -8,12 +8,13 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class ListingComponent implements OnInit {
      
-      public cryptos = [ ];
+      public cryptos 
     constructor(private dataservice:DataService) { }
    
-  ngOnInit(this.dataserrvice.getdata.subscribe(data =>(
-    this.cryptos = data
-  ) )) {
+  ngOnInit(
+  )  {
+    this.dataservice.getData().subscribe(data =>(
+      this.cryptos = data))
   }
 
 }

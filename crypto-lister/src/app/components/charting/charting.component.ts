@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./charting.component.css']
 })
 export class ChartingComponent implements OnInit {
-  public chartType:string = 'bar';
+  public chartType:string = 'line';
 public chartDatasets : Array<any> =[
   {data : [8764.56,
     164.46,
