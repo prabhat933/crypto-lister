@@ -5,14 +5,13 @@
         <th>IMAGE</th>
         <th>CURRENT PRICE</th>
         <th>MARKET CAP</th>
-       
     </tr>
     <tr *ngFor="let crypto of cryptos">
-        <th><input type="checkbox" name="selected"></th>
-        <th>{{crypto.name}}</th>
-        <th><img [src]="crypto.image" width= "32"></th>
-        <th>{{crypto.current_price}}</th>
-        <th>{{crypto.market_cap}}</th>
+        <td><input type="checkbox" name="selected"></td>
+        <td>{{crypto.name}}</td>
+        <td><img [src]="crypto.image" width= "32"></td>
+        <td>{{crypto.current_price}}</td>
+        <td>{{crypto.market_cap}}</td>
         </tr>
        
 </table>

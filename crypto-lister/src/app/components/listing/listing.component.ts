@@ -8,13 +8,21 @@ import { DataService } from 'src/app/service/data.service';
 })
 export class ListingComponent implements OnInit {
      
-      public cryptos 
+    public cryptos 
+    public pageNumber
+    public perPage
+    public orderBy
+    
     constructor(private dataservice:DataService) { }
    
-  ngOnInit(
-  )  {
-    this.dataservice.getData(10,1).subscribe(data =>(
-      this.cryptos = data))
-  }
+  
+    
 
+    ngOnInit(
+  )  {
+    this.dataservice.getData(500,1).subscribe(data =>(
+    this.cryptos = data))
+  }
+  
+  
 }
