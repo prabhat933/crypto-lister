@@ -14,8 +14,14 @@ export class ListingComponent implements OnInit {
     public orderBy
     
     constructor(private dataservice:DataService) { }
-   
-  
+    
+    fetchNextPage() {
+      console.log("Hello World");
+    }
+
+    fetchPreviousPage()  {
+      console.log("Hello World");
+    }
     
 
     ngOnInit(
