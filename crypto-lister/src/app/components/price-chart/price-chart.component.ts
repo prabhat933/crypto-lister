@@ -15,18 +15,18 @@ export class PriceChartComponent implements OnInit {
   ngOnInit() {
     this.dataservice.get24HourData(this.cryptoName).subscribe(data => {
       this.prices = data["prices"].map(x => x[1]);
-      this.times = data["prices"].map(x => new Date(x[0]).toString());
+      this.times = data["prices"].map(x => new Date(x[0]).toLocaleString());
       console.log(this.prices);
       console.log(this.times);
+      this.chartDatasets[0].data = this.prices;
+      this.chartLabels = this.times;
+      this.chartDatasets[0].label = "bitcoin";
     });
   }
 
   public chartType: string = "line";
 
-  public chartDatasets: Array<any> = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: "My First dataset" },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: "My Second dataset" }
-  ];
+  public chartDatasets: Array<any> = [{}];
 
   public chartLabels: Array<any> = [
     "January",
@@ -42,11 +42,6 @@ export class PriceChartComponent implements OnInit {
     {
       backgroundColor: "rgba(105, 0, 132, .2)",
       borderColor: "rgba(200, 99, 132, .7)",
-      borderWidth: 2
-    },
-    {
-      backgroundColor: "rgba(0, 137, 132, .2)",
-      borderColor: "rgba(0, 10, 130, .7)",
       borderWidth: 2
     }
   ];

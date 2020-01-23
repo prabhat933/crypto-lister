@@ -9,7 +9,7 @@
   <tr *ngFor="let crypto of cryptos">
     <td><input type="checkbox" name="selected" /></td>
     <td>
-      <a [routerLink]="'pricechart'"> {{ crypto.name }}</a>
+      <a [routerLink]="'comparechart'"> {{ crypto.name }}</a>
     </td>
     <td><img [src]="crypto.image" width="32" /></td>
     <td>{{ crypto.current_price }}</td>
