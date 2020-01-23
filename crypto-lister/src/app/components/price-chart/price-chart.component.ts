@@ -28,15 +28,7 @@ export class PriceChartComponent implements OnInit {
 
   public chartDatasets: Array<any> = [{}];
 
-  public chartLabels: Array<any> = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July"
-  ];
+  public chartLabels: Array<any> = [];
 
   public chartColors: Array<any> = [
     {
