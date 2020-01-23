@@ -7,10 +7,9 @@ import { ListingComponent } from "./components/listing/listing.component";
 import { HeadingComponent } from "./components/heading/heading.component";
 import { ChartingComponent } from "./components/charting/charting.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
-import { CryptoServiceService } from "./crypto-service.service";
 import { HttpClientModule } from "@angular/common/http";
 import { PriceChartComponent } from "./components/price-chart/price-chart.component";
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from "./footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +31,7 @@ import { FooterComponent } from './footer/footer.component';
     ]),
     AppRoutingModule
   ],
-  providers: [CryptoServiceService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
