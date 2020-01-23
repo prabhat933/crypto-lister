@@ -1,25 +1,29 @@
 <table class="table table-bordered">
-    <tr>
-        <th></th>
-        <th>Cryptocurrency Name</th>
-        <th>Image</th>
-        <th>Current Price</th>
-        <th><a href="#">Market Cap</a></th>
-    </tr>
-    <tr *ngFor="let crypto of cryptos">
-        <td><input type="checkbox" name="selected"></td>
-        <td><a [routerLink]="'pricechart'"> {{crypto.name}}</a></td>
-        <td><img [src]="crypto.image" width= "32"></td>
-        <td>{{crypto.current_price}}</td>
-        <td>{{crypto.market_cap}}</td>
-        </tr>
-       </table>
+  <tr>
+    <th></th>
+    <th>Cryptocurrency Name</th>
+    <th>Image</th>
+    <th>Current Price</th>
+    <th><a href="#">Market Cap</a></th>
+  </tr>
+  <tr *ngFor="let crypto of cryptos">
+    <td><input type="checkbox" name="selected" /></td>
+    <td>
+      <a [routerLink]="'pricechart'"> {{ crypto.name }}</a>
+    </td>
+    <td><img [src]="crypto.image" width="32" /></td>
+    <td>{{ crypto.current_price }}</td>
+    <td>{{ crypto.market_cap }}</td>
+  </tr>
+</table>
+
 <div class="float-left">
-<a (click)="fetchPreviousPage()">Previous</a> &nbsp; &nbsp; &nbsp;
-<a (click)="fetchNextPage()">Next</a>
+  <a (click)="fetchPreviousPage()">Previous</a> &nbsp; &nbsp; &nbsp;
+  <a (click)="fetchNextPage()">Next</a>
 </div>
 
 <div class="float-right">
-<button type="button" class="btn btn-primary" >Mark as favourite</button>&nbsp; &nbsp; &nbsp;
-<button type="button" class="btn btn-primary">Compare</button>
+  <button type="button" class="btn btn-primary">Mark as favourite</button>&nbsp;
+  &nbsp; &nbsp;
+  <button type="button" class="btn btn-primary">Compare</button>
 </div>
