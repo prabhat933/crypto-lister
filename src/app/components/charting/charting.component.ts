@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "src/app/services/data.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-charting",
@@ -7,19 +8,29 @@ import { DataService } from "src/app/services/data.service";
   styleUrls: ["./charting.component.css"]
 })
 export class ChartingComponent implements OnInit {
-  constructor(private dataservice: DataService) {}
+  constructor(
+    private dataservice: DataService,
+    private route: ActivatedRoute
+  ) {}
 
-  public cryptoName1 = "bitcoin-cash";
+  public cryptoId1;
+  public cryptoName1;
   public prices1;
   public times1;
 
-  public cryptoName2 = "bitcoin-cash-sv";
+  public cryptoId2;
+  public cryptoName2;
   public prices2;
   public times2;
 
   ngOnInit() {
+    this.cryptoId1 = this.route.snapshot.paramMap.get("id1");
+    this.cryptoName1 = this.route.snapshot.paramMap.get("name1");
+    this.cryptoId2 = this.route.snapshot.paramMap.get("id2");
+    this.cryptoName2 = this.route.snapshot.paramMap.get("name2");
+
     this.dataservice
-      .getCompareData(this.cryptoName1, this.cryptoName2)
+      .getCompareData(this.cryptoId1, this.cryptoId2)
       .subscribe(data => {
         this.prices1 = data[0]["prices"].map(x => x[1]);
         this.prices2 = data[1]["prices"].map(x => x[1]);

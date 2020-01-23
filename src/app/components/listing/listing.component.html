@@ -33,10 +33,22 @@
   </div>
 
   <div class="float-right">
-    <button type="button" class="btn btn-primary" (click)="markAsFavorite()">
-      Mark as favourite
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="goToComparePage()"
+      [class.invisible]="cryptos && getSelectedCount() != 2"
+    >
+      Compare
     </button>
     <span class="m-2"></span>
-    <button type="button" class="btn btn-secondary">Compare</button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="markAsFavorite()"
+      [class.invisible]="cryptos && getSelectedCount() == 0"
+    >
+      Mark as favourite
+    </button>
   </div>
 </div>

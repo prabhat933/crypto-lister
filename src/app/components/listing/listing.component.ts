@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "src/app/services/data.service";
 import { FavouriteService } from "src/app/services/favourite.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-listing",
@@ -15,7 +16,8 @@ export class ListingComponent implements OnInit {
 
   constructor(
     private dataservice: DataService,
-    private favoriteservice: FavouriteService
+    private favoriteservice: FavouriteService,
+    private router: Router
   ) {}
 
   fetchNextPage() {
@@ -67,5 +69,25 @@ export class ListingComponent implements OnInit {
       }
     });
     return count;
+  }
+
+  goToComparePage() {
+    let crypto = [{}, {}],
+      i = 0;
+    this.cryptos.forEach(x => {
+      if (x.selected) {
+        crypto[i]["id"] = x.id;
+        crypto[i]["name"] = x.name;
+        i++;
+      }
+    });
+    let params = {
+      id1: crypto[0]["id"],
+      name1: crypto[0]["name"],
+      id2: crypto[1]["id"],
+      name2: crypto[1]["name"]
+    };
+    console.log(params);
+    this.router.navigate(["comparechart", params]);
   }
 }
