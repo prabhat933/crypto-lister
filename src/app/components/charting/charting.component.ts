@@ -9,29 +9,35 @@ import { DataService } from "src/app/services/data.service";
 export class ChartingComponent implements OnInit {
   constructor(private dataservice: DataService) {}
 
-  public cryptoName1 = "bitcoin";
+  public cryptoName1 = "bitcoin-cash";
   public prices1;
   public times1;
 
-  public cryptoName2 = "ethereum";
+  public cryptoName2 = "bitcoin-cash-sv";
   public prices2;
   public times2;
 
   ngOnInit() {
-    this.dataservice.getCompareData().subscribe(data => {
-      this.prices1 = data[0]["prices"].map(x => x[1]);
-      this.prices2 = data[1]["prices"].map(x => x[1]);
-      this.times1 = data[0]["prices"].map(x => new Date(x[0]).toLocaleString());
-      this.times2 = data[1]["prices"].map(x => new Date(x[0]).toLocaleString());
+    this.dataservice
+      .getCompareData(this.cryptoName1, this.cryptoName2)
+      .subscribe(data => {
+        this.prices1 = data[0]["prices"].map(x => x[1]);
+        this.prices2 = data[1]["prices"].map(x => x[1]);
+        this.times1 = data[0]["prices"].map(x =>
+          new Date(x[0]).toLocaleString()
+        );
+        this.times2 = data[1]["prices"].map(x =>
+          new Date(x[0]).toLocaleString()
+        );
 
-      this.chartDatasets[0].data = this.prices1;
-      this.chartDatasets[1].data = this.prices2;
-      this.chartLabels = this.times1;
+        this.chartDatasets[0].data = this.prices1;
+        this.chartDatasets[1].data = this.prices2;
+        this.chartLabels = this.times1;
 
-      this.chartDatasets[0].label = this.cryptoName1;
-      this.chartDatasets[1].label = this.cryptoName2;
-      console.log(data);
-    });
+        this.chartDatasets[0].label = this.cryptoName1;
+        this.chartDatasets[1].label = this.cryptoName2;
+        console.log(data);
+      });
   }
 
   public chartType: string = "line";

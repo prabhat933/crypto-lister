@@ -18,13 +18,16 @@
   </tr>
 </table>
 
-<div class="float-left">
-  <a (click)="fetchPreviousPage()">Previous</a> &nbsp; &nbsp; &nbsp;
-  <a (click)="fetchNextPage()">Next</a>
-</div>
+<div class="clearfix">
+  <div class="float-left">
+    <a (click)="fetchPreviousPage()" class="text-primary"><< Previous</a>
+    <span class="m-2"> | </span>
+    <a (click)="fetchNextPage()" class="text-primary">Next >></a>
+  </div>
 
-<div class="float-right">
-  <button type="button" class="btn btn-primary">Mark as favourite</button>&nbsp;
-  &nbsp; &nbsp;
-  <button type="button" class="btn btn-primary">Compare</button>
+  <div class="float-right">
+    <button type="button" class="btn btn-primary">Mark as favourite</button>
+    <span class="m-2"></span>
+    <button type="button" class="btn btn-secondary">Compare</button>
+  </div>
 </div>
