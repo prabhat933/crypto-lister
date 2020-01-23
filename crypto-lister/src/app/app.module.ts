@@ -9,13 +9,15 @@ import { ChartingComponent } from './components/charting/charting.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { CryptoServiceService } from './crypto-service.service';
 import { HttpClientModule } from '@angular/common/http';
+import { PriceChartComponent } from './components/price-chart/price-chart.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListingComponent,
     HeadingComponent,
-    ChartingComponent
+    ChartingComponent,
+    PriceChartComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
     RouterModule.forRoot([
       {path:'app-charting',component:ChartingComponent},
       {path: '', component:ListingComponent},
-      {path:'',component:ListingComponent}
+      {path: 'pricechart', component:PriceChartComponent}
     ]),
     AppRoutingModule
   ],
