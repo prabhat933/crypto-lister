@@ -10,6 +10,7 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { CryptoServiceService } from "./crypto-service.service";
 import { HttpClientModule } from "@angular/common/http";
 import { PriceChartComponent } from "./components/price-chart/price-chart.component";
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PriceChartComponent } from "./components/price-chart/price-chart.compon
     ListingComponent,
     HeadingComponent,
     ChartingComponent,
-    PriceChartComponent
+    PriceChartComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
