@@ -4,8 +4,18 @@
     <th></th>
     <th>Cryptocurrency Name</th>
     <th>Image</th>
-    <th>Current Price(USD)</th>
-    <th><a href="#">Market Cap (USD)</a></th>
+    <th>
+      <a (click)="applySorting('price')" class="text-primary font-weight-bold"
+        >Current Price(USD)</a
+      >
+    </th>
+    <th>
+      <a
+        (click)="applySorting('market_cap')"
+        class="text-primary font-weight-bold"
+        >Market Cap (USD)</a
+      >
+    </th>
   </tr>
   <tr *ngFor="let crypto of cryptos">
     <td>
@@ -27,9 +37,13 @@
 
 <div class="clearfix">
   <div class="float-left">
-    <a (click)="fetchPreviousPage()" class="text-primary"><< Previous</a>
+    <a (click)="fetchPreviousPage()" class="text-primary font-weight-bold"
+      ><< Previous</a
+    >
     <span class="m-2"> | </span>
-    <a (click)="fetchNextPage()" class="text-primary">Next >></a>
+    <a (click)="fetchNextPage()" class="text-primary font-weight-bold"
+      >Next >></a
+    >
   </div>
 
   <div class="float-right">

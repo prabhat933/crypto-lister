@@ -47,7 +47,6 @@ export class ChartingComponent implements OnInit {
 
         this.chartDatasets[0].label = this.cryptoName1;
         this.chartDatasets[1].label = this.cryptoName2;
-        console.log(data);
       });
   }
 

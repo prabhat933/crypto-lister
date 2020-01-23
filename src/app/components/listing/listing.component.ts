@@ -47,7 +47,6 @@ export class ListingComponent implements OnInit {
     if (this.getSelectedCount() == 0) {
       alert("Please selected atleast one cryptocurrency");
     } else {
-      alert("Marked as favorite");
       this.cryptos.forEach(x => {
         if (x["selected"] == true) {
           this.favoriteservice.addToFavorites(x["id"]);
@@ -87,7 +86,23 @@ export class ListingComponent implements OnInit {
       id2: crypto[1]["id"],
       name2: crypto[1]["name"]
     };
-    console.log(params);
     this.router.navigate(["comparechart", params]);
+  }
+
+  applySorting(criteria) {
+    if (criteria == "market_cap") {
+      if (this.orderBy == "market_cap_desc") {
+        this.orderBy = "market_cap_asc";
+      } else {
+        this.orderBy = "market_cap_desc";
+      }
+    } else if (criteria == "price") {
+      if (this.orderBy == "price_desc") {
+        this.orderBy = "price_asc";
+      } else {
+        this.orderBy = "price_desc";
+      }
+    }
+    this.getListingData();
   }
 }
