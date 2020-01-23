@@ -12,7 +12,7 @@
       <input type="checkbox" name="selected" [(ngModel)]="crypto.selected" />
     </td>
     <td>
-      <a [routerLink]="'comparechart'">
+      <a [routerLink]="['pricechart', { id: crypto.id, name: crypto.name }]">
         {{ crypto.name }}
         <span *ngIf="isFavorite(crypto.id)" class="badge badge-success">
           favorite

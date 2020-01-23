@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "src/app/services/data.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-price-chart",
@@ -7,20 +8,24 @@ import { DataService } from "src/app/services/data.service";
   styleUrls: ["./price-chart.component.css"]
 })
 export class PriceChartComponent implements OnInit {
-  constructor(private dataservice: DataService) {}
-
-  public cryptoName = "bitcoin";
+  public cryptoId;
+  public cryptoName;
   public prices;
   public times;
+  constructor(
+    private dataservice: DataService,
+    private route: ActivatedRoute
+  ) {}
+
   ngOnInit() {
-    this.dataservice.get24HourData(this.cryptoName).subscribe(data => {
+    this.cryptoId = this.route.snapshot.paramMap.get("id");
+    this.cryptoName = this.route.snapshot.paramMap.get("name");
+    this.dataservice.get24HourData(this.cryptoId).subscribe(data => {
       this.prices = data["prices"].map(x => x[1]);
       this.times = data["prices"].map(x => new Date(x[0]).toLocaleString());
-      console.log(this.prices);
-      console.log(this.times);
       this.chartDatasets[0].data = this.prices;
       this.chartLabels = this.times;
-      this.chartDatasets[0].label = "bitcoin";
+      this.chartDatasets[0].label = this.cryptoName;
     });
   }
 
