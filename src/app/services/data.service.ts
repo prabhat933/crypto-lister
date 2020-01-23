@@ -7,8 +7,8 @@ import { forkJoin } from "rxjs";
 })
 export class DataService {
   constructor(private http: HttpClient) {}
-  getData(perPage = 5, pageNumber = 1, orderBy = "market_cap_desc") {
-    let _url: string = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=${orderBy}&per_page=${perPage}&page=${pageNumber}&sparkline=false`;
+  getData(ids = "", perPage = 5, pageNumber = 1, orderBy = "market_cap_desc") {
+    let _url: string = `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids}&order=${orderBy}&per_page=${perPage}&page=${pageNumber}&sparkline=false`;
     return this.http.get(_url);
   }
 

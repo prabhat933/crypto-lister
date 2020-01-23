@@ -12,6 +12,7 @@ export class ListingComponent implements OnInit {
   public cryptos;
   public pageNumber = 1;
   public perPage = 10;
+  public showOnlyFavorites = true;
   public orderBy = "market_cap_desc";
 
   constructor(
@@ -35,8 +36,13 @@ export class ListingComponent implements OnInit {
   }
 
   getListingData() {
+    let ids = "";
+    if (this.showOnlyFavorites) {
+      ids = this.favoriteservice.getFavorites().join(",");
+      this.pageNumber = 1;
+    }
     this.dataservice
-      .getData(this.perPage, this.pageNumber, this.orderBy)
+      .getData(ids, this.perPage, this.pageNumber, this.orderBy)
       .subscribe(data => {
         this.cryptos = data;
         this.cryptos.map(x => (x["selected"] = false));

@@ -36,7 +36,7 @@
 </table>
 
 <div class="clearfix">
-  <div class="float-left">
+  <div class="float-left" *ngIf="!showOnlyFavorites">
     <a (click)="fetchPreviousPage()" class="text-primary font-weight-bold"
       ><< Previous</a
     >
@@ -64,5 +64,12 @@
     >
       Mark as favourite
     </button>
+    <span class="m-2"></span>
+    <input
+      type="checkbox"
+      [(ngModel)]="showOnlyFavorites"
+      (change)="getListingData()"
+    />
+    Show only favorites
   </div>
 </div>
