@@ -13,14 +13,15 @@ export class ChartingComponent implements OnInit {
   public prices;
   public times;
   ngOnInit() {
-    this.dataservice.get24HourData(this.cryptoName).subscribe(data => {
-      this.prices = data["prices"].map(x => x[1]);
-      this.times = data["prices"].map(x => new Date(x[0]).toLocaleString());
-      console.log(this.prices);
-      console.log(this.times);
-      this.chartDatasets[0].data = this.prices;
-      this.chartLabels = this.times;
-      this.chartDatasets[0].label = "bitcoin";
+    this.dataservice.getCompareData().subscribe(data => {
+      // this.prices = data["prices"].map(x => x[1]);
+      // this.times = data["prices"].map(x => new Date(x[0]).toLocaleString());
+      // console.log(this.prices);
+      // console.log(this.times);
+      // this.chartDatasets[0].data = this.prices;
+      // this.chartLabels = this.times;
+      // this.chartDatasets[0].label = "bitcoin";
+      console.log(data);
     });
   }
 
