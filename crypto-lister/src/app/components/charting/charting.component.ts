@@ -9,35 +9,36 @@ import { DataService } from "src/app/service/data.service";
 export class ChartingComponent implements OnInit {
   constructor(private dataservice: DataService) {}
 
-  public cryptoName = "bitcoin";
-  public prices;
-  public times;
+  public cryptoName1 = "bitcoin";
+  public prices1;
+  public times1;
+
+  public cryptoName2 = "ethereum";
+  public prices2;
+  public times2;
+
   ngOnInit() {
     this.dataservice.getCompareData().subscribe(data => {
-      // this.prices = data["prices"].map(x => x[1]);
-      // this.times = data["prices"].map(x => new Date(x[0]).toLocaleString());
-      // console.log(this.prices);
-      // console.log(this.times);
-      // this.chartDatasets[0].data = this.prices;
-      // this.chartLabels = this.times;
-      // this.chartDatasets[0].label = "bitcoin";
+      this.prices1 = data[0]["prices"].map(x => x[1]);
+      this.prices2 = data[1]["prices"].map(x => x[1]);
+      this.times1 = data[0]["prices"].map(x => new Date(x[0]).toLocaleString());
+      this.times2 = data[1]["prices"].map(x => new Date(x[0]).toLocaleString());
+
+      this.chartDatasets[0].data = this.prices1;
+      this.chartDatasets[1].data = this.prices2;
+      this.chartLabels = this.times1;
+
+      this.chartDatasets[0].label = this.cryptoName1;
+      this.chartDatasets[1].label = this.cryptoName2;
       console.log(data);
     });
   }
 
   public chartType: string = "line";
 
-  public chartDatasets: Array<any> = [{}];
+  public chartDatasets: Array<any> = [{}, {}];
 
-  public chartLabels: Array<any> = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July"
-  ];
+  public chartLabels: Array<any> = [];
 
   public chartColors: Array<any> = [
     {
