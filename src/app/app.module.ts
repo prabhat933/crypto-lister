@@ -10,6 +10,7 @@ import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { HttpClientModule } from "@angular/common/http";
 import { PriceChartComponent } from "./components/price-chart/price-chart.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { FooterComponent } from "./components/footer/footer.component";
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       { path: "comparechart", component: ChartingComponent },

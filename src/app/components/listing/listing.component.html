@@ -8,7 +8,9 @@
     <th><a href="#">Market Cap (USD)</a></th>
   </tr>
   <tr *ngFor="let crypto of cryptos">
-    <td><input type="checkbox" name="selected" /></td>
+    <td>
+      <input type="checkbox" name="selected" [(ngModel)]="crypto.selected" />
+    </td>
     <td>
       <a [routerLink]="'comparechart'"> {{ crypto.name }}</a>
     </td>
@@ -26,7 +28,9 @@
   </div>
 
   <div class="float-right">
-    <button type="button" class="btn btn-primary">Mark as favourite</button>
+    <button type="button" class="btn btn-primary" (click)="markAsFavorite()">
+      Mark as favourite
+    </button>
     <span class="m-2"></span>
     <button type="button" class="btn btn-secondary">Compare</button>
   </div>

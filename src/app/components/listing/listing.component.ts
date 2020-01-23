@@ -16,21 +16,28 @@ export class ListingComponent implements OnInit {
 
   fetchNextPage() {
     this.pageNumber++;
-    this.dataservice
-      .getData(this.perPage, this.pageNumber, this.orderBy)
-      .subscribe(data => (this.cryptos = data));
+    this.getListingData();
   }
 
   fetchPreviousPage() {
     this.pageNumber--;
-    this.dataservice
-      .getData(this.perPage, this.pageNumber, this.orderBy)
-      .subscribe(data => (this.cryptos = data));
+    this.getListingData();
   }
 
   ngOnInit() {
+    this.getListingData();
+  }
+
+  getListingData() {
     this.dataservice
       .getData(this.perPage, this.pageNumber, this.orderBy)
-      .subscribe(data => (this.cryptos = data));
+      .subscribe(data => {
+        this.cryptos = data;
+        this.cryptos.map(x => (x["selected"] = false));
+      });
+  }
+
+  markAsFavorite() {
+    alert("Marked as favorite");
   }
 }
