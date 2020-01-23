@@ -9,7 +9,7 @@ import { ChartingComponent } from "./components/charting/charting.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { HttpClientModule } from "@angular/common/http";
 import { PriceChartComponent } from "./components/price-chart/price-chart.component";
-import { FooterComponent } from "./footer/footer.component";
+import { FooterComponent } from "./components/footer.component";
 
 @NgModule({
   declarations: [
