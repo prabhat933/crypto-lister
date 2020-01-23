@@ -24,6 +24,12 @@ https://github.com/prabhat933/crypto-lister
 
 ## Project Hosting Url
 
+http://13.232.253.224/
+
+## Assumptions
+
+1. Only 10 crypto-currencies per page will be shown
+
 ## Additional Features
 
 This project has following additional feature(s):
@@ -35,8 +41,8 @@ This project has following additional feature(s):
 
 I tried to fulfil all the specifications of the project. Some deviations are:
 
-1.  Instead of
-    ​https://coinmarketcap.com/api/, I have used https://www.coingecko.com/api/
+1.  Instead of https://coinmarketcap.com/api/,
+    I have used https://www.coingecko.com/api/
     as I could not find a free version of coinmarketcap.
 2.  I could not think of a good way to implement filtering based on price range
     and market cap range. These values lied between very small fractional values
