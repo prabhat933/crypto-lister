@@ -1,27 +1,50 @@
-# CryptoLister
+# CRYPTO-LISTER
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.4.
+## Project Description
 
-## Development server
+Crypto-Lister is a project that shows the various crypto currency details.
+It has 3 views:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+1.  List view - get a paginated view of over 5000 crypto currencies
+2.  Comparision view - compare the prices of two crypto currencies over the last 24 hours
+3.  Price view - view the price fluctuation of a crypto currency over last 24 hours
 
-## Code scaffolding
+## Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The following technologies are used in this project
 
-## Build
+1.  Angular
+2.  Material Design for Bootstrap - we have used it for charts
+3.  Bootstrap - for various style classes
+4.  CoinGecko - used for getting data of cryptocurrency
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Github Link
 
-## Running unit tests
+https://github.com/prabhat933/crypto-lister
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Project Hosting Url
 
-## Running end-to-end tests
+## Additional Features
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+This project has following additional feature(s):
 
-## Further help
+1.  "favorite" badge in green color to selected crypto currency.
+    This helps in visual identification of our favorite cryptocurrency.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Deviation From Given Specification
+
+I tried to fulfil all the specifications of the project. Some deviations are:
+
+1.  Instead of
+    ​https://coinmarketcap.com/api/, I have used https://www.coingecko.com/api/
+    as I could not find a free version of coinmarketcap.
+2.  I could not think of a good way to implement filtering based on price range
+    and market cap range. These values lied between very small fractional values
+    to very very large values. Representing them on a small slider was difficult
+    for me.
+3.  Instead of opening **Price Chart View** on clicking anywhere on the row, I designed
+    it to work on clicking on the crypto currency name (which I designed to be a link)
+4.  Also, instead of making check boxes appear on long press on a row, I designed the
+    checkboxes to be always present. Whenever you select:
+    a. One or more checkbox, _Mark as favorite_ button appears
+    b. Exactly two checkboxes, _Compare_ button appears.
