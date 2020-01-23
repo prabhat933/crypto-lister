@@ -12,7 +12,12 @@
       <input type="checkbox" name="selected" [(ngModel)]="crypto.selected" />
     </td>
     <td>
-      <a [routerLink]="'comparechart'"> {{ crypto.name }}</a>
+      <a [routerLink]="'comparechart'">
+        {{ crypto.name }}
+        <span *ngIf="isFavorite(crypto.id)" class="badge badge-success">
+          favorite
+        </span>
+      </a>
     </td>
     <td><img [src]="crypto.image" width="32" /></td>
     <td>{{ crypto.current_price }}</td>

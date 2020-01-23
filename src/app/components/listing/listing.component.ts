@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { DataService } from "src/app/services/data.service";
+import { FavouriteService } from "src/app/services/favourite.service";
 
 @Component({
   selector: "app-listing",
@@ -12,7 +13,10 @@ export class ListingComponent implements OnInit {
   public perPage = 10;
   public orderBy = "market_cap_desc";
 
-  constructor(private dataservice: DataService) {}
+  constructor(
+    private dataservice: DataService,
+    private favoriteservice: FavouriteService
+  ) {}
 
   fetchNextPage() {
     this.pageNumber++;
@@ -38,6 +42,30 @@ export class ListingComponent implements OnInit {
   }
 
   markAsFavorite() {
-    alert("Marked as favorite");
+    if (this.getSelectedCount() == 0) {
+      alert("Please selected atleast one cryptocurrency");
+    } else {
+      alert("Marked as favorite");
+      this.cryptos.forEach(x => {
+        if (x["selected"] == true) {
+          this.favoriteservice.addToFavorites(x["id"]);
+        }
+        x["selected"] = false;
+      });
+    }
+  }
+
+  isFavorite(cryptoName) {
+    return this.favoriteservice.isFavorite(cryptoName);
+  }
+
+  getSelectedCount() {
+    let count = 0;
+    this.cryptos.forEach(x => {
+      if (x["selected"] == true) {
+        count++;
+      }
+    });
+    return count;
   }
 }
