@@ -54,3 +54,4 @@ I tried to fulfil all the specifications of the project. Some deviations are:
     checkboxes to be always present. Whenever you select:
     a. One or more checkbox, _Mark as favorite_ button appears
     b. Exactly two checkboxes, _Compare_ button appears.
+# crypto-lister2
